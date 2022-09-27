@@ -34,3 +34,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
 
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: |
+          sudo fdisk -l
+          sudo lsblk
+
