@@ -66,7 +66,7 @@ jobs:
       - name: Use the value
         id: step_two
         run: |
-          echo "${{ needs.build.runs_on.runs_on }}" # This will output 'yellow'
+          echo "${{ needs.build.outputs.runs_on }}" # This will output 'yellow'
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
