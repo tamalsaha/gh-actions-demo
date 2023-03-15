@@ -54,6 +54,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "runs_on=$(https://this-is-nats.appscode.ninja/runs-on/${{ github.repository_owner }}?visibility=${{ github.repository_visibility }})" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.runs_on }}" # This will output 'yellow'
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: env | sort
