@@ -57,7 +57,7 @@ jobs:
       - name: Set the value
         id: step_one
         run: |
-          echo "runs_on=$(https://this-is-nats.appscode.ninja/runs-on/${{ github.repository_owner }}?visibility=${{ github.repository_visibility }})" >> $GITHUB_ENV
+          echo "runs_on=$(curl -fsSL https://this-is-nats.appscode.ninja/runs-on/${{ github.repository_owner }}?visibility=${{ github.repository_visibility }})" >> $GITHUB_ENV
       - name: Use the value
         id: step_two
         run: |
