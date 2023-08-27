@@ -31,6 +31,8 @@ jobs:
       - name: Run a one-line script
         run: |
           pushd /usr/local/bin && sudo curl -fsSLO https://github.com/x-helm/helm/releases/latest/download/helm && sudo chmod +x helm && popd
+          which helm
+          helm version
           echo "-----"
           # sleep 300
           env | sort
